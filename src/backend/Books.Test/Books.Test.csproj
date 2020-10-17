@@ -11,6 +11,7 @@
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
     <PackageReference Include="coverlet.collector" Version="1.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.9" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,5 +19,11 @@
     <Folder Include="Integration\" />
     <Folder Include="Units\" />
     <Folder Include="Fake\" />
+    <Folder Include="Integration\Repository\" />
+    <Folder Include="Integration\Entity\" />
+    <Folder Include="Integration\ApplicationService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Books.Infra.CrossCutting.IoC\Books.Infra.CrossCutting.IoC.csproj" />
   </ItemGroup>
 </Project>
