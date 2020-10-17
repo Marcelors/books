@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Context\" />
+    <Folder Include="Mappings\" />
+    <Folder Include="UoW\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Books.Domain.Shared\Books.Domain.Shared.csproj" />
+    <ProjectReference Include="..\Books.Domain\Books.Domain.csproj" />
+  </ItemGroup>
+</Project>
