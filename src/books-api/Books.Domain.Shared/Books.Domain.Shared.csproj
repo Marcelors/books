@@ -19,42 +19,23 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\DomainError.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>DomainError.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInPackage>false</IncludeInPackage>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Resource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Resource.pt-BR.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.pt-BR.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="Resources\Resource.pt-BR">
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="Resources\DomainError.pt-BR">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>DomainError.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Resources\DomainError.Designer.cs">
-      <DependentUpon>DomainError.pt-BR</DependentUpon>
-    </Compile>
     <Compile Update="Resources\Resource.pt-BR.Designer.cs">
       <DependentUpon>Resource.pt-BR.resx</DependentUpon>
     </Compile>
     <Compile Update="Resources\DomainError.Designer.cs">
-      <DependentUpon>DomainError.pt-BR</DependentUpon>
+      <DependentUpon>DomainError.resx</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Resources\DomainError.pt-BR" />
-    <None Remove="Resources\Resource.pt-BR" />
   </ItemGroup>
 </Project>

@@ -8,8 +8,12 @@
     <Folder Include="Model\" />
     <Folder Include="Inferfaces\" />
     <Folder Include="Application\" />
+    <Folder Include="AutoMapper\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Books.Domain\Books.Domain.csproj" />
   </ItemGroup>
 </Project>

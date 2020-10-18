@@ -16,7 +16,7 @@ namespace Books.Domain.Shared.Resources {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class DomainError {
+    public class DomainError {
         
         private static System.Resources.ResourceManager resourceMan;
         
@@ -27,10 +27,10 @@ namespace Books.Domain.Shared.Resources {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static System.Resources.ResourceManager ResourceManager {
+        public static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
-                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Books.Domain.Shared.Resources.DomainError.pt-BR", typeof(DomainError).Assembly);
+                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Books.Domain.Shared.Resources.DomainError", typeof(DomainError).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -38,12 +38,18 @@ namespace Books.Domain.Shared.Resources {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static System.Globalization.CultureInfo Culture {
+        public static System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        public static string ProfileIsRequired {
+            get {
+                return ResourceManager.GetString("ProfileIsRequired", resourceCulture);
             }
         }
     }

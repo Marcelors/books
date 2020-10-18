@@ -16,7 +16,7 @@ namespace Books.Domain.Shared.Resources {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resource {
+    public class Resource {
         
         private static System.Resources.ResourceManager resourceMan;
         
@@ -27,7 +27,7 @@ namespace Books.Domain.Shared.Resources {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static System.Resources.ResourceManager ResourceManager {
+        public static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
                     System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Books.Domain.Shared.Resources.Resource.pt-BR", typeof(Resource).Assembly);
@@ -38,7 +38,7 @@ namespace Books.Domain.Shared.Resources {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static System.Globalization.CultureInfo Culture {
+        public static System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -46,14 +46,14 @@ namespace Books.Domain.Shared.Resources {
                 resourceCulture = value;
             }
         }
-        
-        internal static string Standard {
+
+        public static string Standard {
             get {
                 return ResourceManager.GetString("Standard", resourceCulture);
             }
         }
-        
-        internal static string Administrator {
+
+        public static string Administrator {
             get {
                 return ResourceManager.GetString("Administrator", resourceCulture);
             }
