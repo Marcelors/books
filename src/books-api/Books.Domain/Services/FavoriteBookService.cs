@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Books.Domain.DTO;
 using Books.Domain.Entities;
 using Books.Domain.Interfaces;
@@ -14,10 +15,12 @@ namespace Books.Domain.Services
     public class FavoriteBookService : Service, IFavoriteBookService
     {
         private readonly IFavoriteBookRepository _favoriteBookRepository;
+        private readonly IBookService _bookService;
 
-        public FavoriteBookService(IUnitOfWork uow, IMediator bus, INotificationHandler<DomainNotification> notifications, IFavoriteBookRepository favoriteBookRepository) : base(uow, bus, notifications)
+        public FavoriteBookService(IUnitOfWork uow, IMediator bus, INotificationHandler<DomainNotification> notifications, IFavoriteBookRepository favoriteBookRepository, IBookService bookService) : base(uow, bus, notifications)
         {
             _favoriteBookRepository = favoriteBookRepository;
+            _bookService = bookService;
         }
 
         public void Add(FavoriteBookDto dto)
@@ -40,7 +43,7 @@ namespace Books.Domain.Services
             Commit();
         }
 
-        public BookDto GetById(Guid id)
+        public async Task<BookDto> GetById(Guid id)
         {
             var favoriteBook = _favoriteBookRepository.GetById(id);
 
@@ -50,7 +53,8 @@ namespace Books.Domain.Services
                 return null;
             }
 
-
+            var book = await _bookService.GetById(favoriteBook.BookId);
+            return book;
         }
     }
 }

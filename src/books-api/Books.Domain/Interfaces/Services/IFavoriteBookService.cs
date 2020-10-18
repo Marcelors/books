@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Books.Domain.DTO;
 
 namespace Books.Domain.Interfaces.Services
@@ -7,6 +8,6 @@ namespace Books.Domain.Interfaces.Services
     {
         void Add(FavoriteBookDto dto);
         void Delete(Guid id);
-        BookDto GetById(Guid id);
+        Task<BookDto> GetById(Guid id);
     }
 }
