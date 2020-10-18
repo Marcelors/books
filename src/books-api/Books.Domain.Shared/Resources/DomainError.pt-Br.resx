@@ -59,45 +59,48 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     <data name="ProfileIsRequired" xml:space="preserve">
-        <value>Profile is required</value>
+        <value>Perfil é obrigatório</value>
     </data>
     <data name="NameIsRequired" xml:space="preserve">
-        <value>Name is required</value>
+        <value>Nome é obrigatório</value>
     </data>
     <data name="MaximumNameSize" xml:space="preserve">
-        <value>Maximum name size is {0}</value>
+        <value>tamanho máximo do nome é {0}</value>
     </data>
     <data name="EmailIsRequired" xml:space="preserve">
-        <value>Email is required</value>
-    </data>
-    <data name="AuthorsIsRequired" xml:space="preserve">
-        <value>At least one author is necessary</value>
-    </data>
-    <data name="BookIdIsRequired" xml:space="preserve">
-        <value>Book Id is required</value>
-    </data>
-    <data name="MaximumBookIdSize" xml:space="preserve">
-        <value>Maximum book id size is {0}</value>
-    </data>
-    <data name="LinkIsRequired" xml:space="preserve">
-        <value>Link is required</value>
-    </data>
-    <data name="MaximumLinkSize" xml:space="preserve">
-        <value>Maximum link size is {0}</value>
-    </data>
-    <data name="TitleIsRequired" xml:space="preserve">
-        <value>Title is required</value>
-    </data>
-    <data name="MaximumTitleSize" xml:space="preserve">
-        <value>Maximum title size is {0}</value>
-    </data>
-    <data name="UserIsRequired" xml:space="preserve">
-        <value>User is required</value>
+        <value>Email é obrigatório</value>
     </data>
     <data name="MaximumEmailSize" xml:space="preserve">
-        <value>Maximum email size is {0}</value>
+        <value>tamanho máximo do email é {0}</value>
+    </data>
+    <data name="AuthorsIsRequired" xml:space="preserve">
+        <value>Pelo menos um autor é necessário</value>
+    </data>
+    <data name="BookIdIsRequired" xml:space="preserve">
+        <value>Id do Livro é obrigatório</value>
+    </data>
+    <data name="MaximumBookIdSize" xml:space="preserve">
+        <value>tamanho máximo do id do livro é {0}</value>
+    </data>
+    <data name="LinkIsRequired" xml:space="preserve">
+        <value>Link é obrigatório</value>
+    </data>
+    <data name="MaximumLinkSize" xml:space="preserve">
+        <value>tamanho máximo do link é {0}</value>
+    </data>
+    <data name="TitleIsRequired" xml:space="preserve">
+        <value>Titulo é obrigatório</value>
+    </data>
+    <data name="MaximumTitleSize" xml:space="preserve">
+        <value>tamanho máximo do titulo é {0}</value>
+    </data>
+    <data name="UserIsRequired" xml:space="preserve">
+        <value>usuário é obrigatório</value>
+    </data>
+    <data name="MaximumEmailSize" xml:space="preserve">
+        <value>tamanho máximo do email é {0}</value>
     </data>
     <data name="UserNotFound" xml:space="preserve">
-        <value>User not found</value>
+        <value>Usuário não encontrado</value>
     </data>
 </root>

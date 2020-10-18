@@ -1,5 +1,4 @@
-﻿using System;
-namespace Books.ApplicationService.Application
+﻿namespace Books.ApplicationService.Application
 {
     public class BookApplicationService
     {

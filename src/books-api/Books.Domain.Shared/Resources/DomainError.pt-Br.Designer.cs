@@ -16,21 +16,21 @@ namespace Books.Domain.Shared.Resources {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class DomainError {
+    public class DomainError_pt_Br {
         
         private static System.Resources.ResourceManager resourceMan;
         
         private static System.Globalization.CultureInfo resourceCulture;
         
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal DomainError() {
+        internal DomainError_pt_Br() {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         public static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
-                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Books.Domain.Shared.Resources.DomainError", typeof(DomainError).Assembly);
+                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Books.Domain.Shared.Resources.DomainError.pt-Br", typeof(DomainError_pt_Br).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -68,6 +68,12 @@ namespace Books.Domain.Shared.Resources {
         public static string EmailIsRequired {
             get {
                 return ResourceManager.GetString("EmailIsRequired", resourceCulture);
+            }
+        }
+        
+        public static string MaximumEmailSize {
+            get {
+                return ResourceManager.GetString("MaximumEmailSize", resourceCulture);
             }
         }
         
@@ -116,12 +122,6 @@ namespace Books.Domain.Shared.Resources {
         public static string UserIsRequired {
             get {
                 return ResourceManager.GetString("UserIsRequired", resourceCulture);
-            }
-        }
-        
-        public static string MaximumEmailSize {
-            get {
-                return ResourceManager.GetString("MaximumEmailSize", resourceCulture);
             }
         }
         

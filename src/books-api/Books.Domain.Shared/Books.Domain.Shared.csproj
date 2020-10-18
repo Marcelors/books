@@ -19,7 +19,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\DomainError.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DomainError.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInPackage>false</IncludeInPackage>
@@ -29,13 +29,24 @@
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\DomainError.pt-Br.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DomainError.pt-Br.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\Resource.pt-BR.Designer.cs">
       <DependentUpon>Resource.pt-BR.resx</DependentUpon>
     </Compile>
     <Compile Update="Resources\DomainError.Designer.cs">
+      <DependentUpon>DomainError.pt-Br</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\DomainError.Designer.cs">
       <DependentUpon>DomainError.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\DomainError.pt-Br" />
   </ItemGroup>
 </Project>

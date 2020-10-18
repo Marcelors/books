@@ -52,5 +52,10 @@ namespace Books.Domain.Entities
         {
             Active = false;
         }
+
+        public void SetProfile(ProfileType profile)
+        {
+            Profile = profile;
+        }
     }
 }
