@@ -45,6 +45,9 @@
     <Compile Update="Resources\DomainError.Designer.cs">
       <DependentUpon>DomainError.resx</DependentUpon>
     </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Resources\DomainError.pt-Br.Designer.cs">
+      <DependentUpon>DomainError.pt-Br.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\DomainError.pt-Br" />

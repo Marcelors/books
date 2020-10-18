@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MediatR;
+using Books.Infra.CrossCutting.IoC;
 
 namespace Books.Api
 {
@@ -29,6 +30,7 @@ namespace Books.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.Register();
 
             services.AddDbContext<BookContext>(options =>
             {

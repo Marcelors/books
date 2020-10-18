@@ -12,14 +12,14 @@ using Books.Domain.Shared.Models;
 
 namespace Books.ApplicationService.Application
 {
-    public class FavoriteBookService : IFavoriteBookApplicationService
+    public class FavoriteBookApplicationService : IFavoriteBookApplicationService
     {
         private readonly IMapper _mapper;
         private readonly IFavoriteBookService _favoriteBookService;
         private readonly IFavoriteBookRepository _favoriteBookRepository;
         private readonly IRequestScope _requestScope;
 
-        public FavoriteBookService(IMapper mapper, IFavoriteBookService favoriteBookService, IFavoriteBookRepository favoriteBookRepository, IRequestScope requestScope)
+        public FavoriteBookApplicationService(IMapper mapper, IFavoriteBookService favoriteBookService, IFavoriteBookRepository favoriteBookRepository, IRequestScope requestScope)
         {
             _mapper = mapper;
             _favoriteBookService = favoriteBookService;

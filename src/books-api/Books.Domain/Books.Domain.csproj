@@ -12,6 +12,7 @@
     <Folder Include="Validation\" />
     <Folder Include="Interfaces\Services\" />
     <Folder Include="Interfaces\Repositores\" />
+    <Folder Include="Authentication\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Books.Domain.Shared\Books.Domain.Shared.csproj" />

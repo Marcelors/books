@@ -97,10 +97,25 @@
     <data name="UserIsRequired" xml:space="preserve">
         <value>usuário é obrigatório</value>
     </data>
-    <data name="MaximumEmailSize" xml:space="preserve">
-        <value>tamanho máximo do email é {0}</value>
-    </data>
     <data name="UserNotFound" xml:space="preserve">
         <value>Usuário não encontrado</value>
+    </data>
+    <data name="searchIsRequired" xml:space="preserve">
+        <value>pesquisa é obrigatório</value>
+    </data>
+    <data name="currentPageIsRequired" xml:space="preserve">
+        <value>pagina atual é obrigatória</value>
+    </data>
+    <data name="FavoriteBookNotFound" xml:space="preserve">
+        <value>Livro Favorito não encontrado</value>
+    </data>
+    <data name="itemsPerPageIsRequired" xml:space="preserve">
+        <value>Itens por página</value>
+    </data>
+    <data name="TheValueCannotBeGreaterThan" xml:space="preserve">
+        <value>O valor não pode ser maior que: {0}</value>
+    </data>
+    <data name="SearchMustBeAtLeastCharacters" xml:space="preserve">
+        <value>a pesquisa deve ter pelo menos {0} caracteres</value>
     </data>
 </root>

@@ -100,4 +100,22 @@
     <data name="UserNotFound" xml:space="preserve">
         <value>User not found</value>
     </data>
+     <data name="searchIsRequired" xml:space="preserve">
+        <value>search is required </value>
+    </data>
+    <data name="currentPageIsRequired" xml:space="preserve">
+        <value>current paga is required </value>
+    </data>
+    <data name="FavoriteBookNotFound" xml:space="preserve">
+        <value>Favorite book not found</value>
+    </data>
+    <data name="itemsPerPageIsRequired" xml:space="preserve">
+        <value>Items per page is required</value>
+    </data>
+    <data name="TheValueCannotBeGreaterThan" xml:space="preserve">
+        <value>The value cannot be greater than: {0}</value>
+    </data>
+    <data name="SearchMustBeAtLeastCharacters" xml:space="preserve">
+        <value>search must be at least {0} characters</value>
+    </data>
 </root>

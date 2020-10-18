@@ -26,31 +26,31 @@ namespace Books.Domain.Services
         {
             if (string.IsNullOrWhiteSpace(filter.Search))
             {
-                NotifyError(DomainError.FavoriteBookNotFound);
+                NotifyError(DomainError.searchIsRequired);
                 return (0, new List<BookDto>());
             }
 
             if(filter.Search.Length < 3)
             {
-                NotifyError(DomainError.FavoriteBookNotFound);
+                NotifyError(string.Format(DomainError.SearchMustBeAtLeastCharacters, 3));
                 return (0, new List<BookDto>());
             }
 
             if (!filter.ItemsPerPage.HasValue)
             {
-                NotifyError(DomainError.FavoriteBookNotFound);
+                NotifyError(DomainError.itemsPerPageIsRequired);
                 return (0, new List<BookDto>());
             }
 
             if(filter.ItemsPerPage.Value > 40)
             {
-                NotifyError(DomainError.FavoriteBookNotFound);
+                NotifyError(string.Format(DomainError.TheValueCannotBeGreaterThan, 40));
                 return (0, new List<BookDto>());
             }
 
             if (!filter.CurrentPage.HasValue)
             {
-                NotifyError(DomainError.FavoriteBookNotFound);
+                NotifyError(DomainError.currentPageIsRequired);
                 return (0, new List<BookDto>());
             }
 

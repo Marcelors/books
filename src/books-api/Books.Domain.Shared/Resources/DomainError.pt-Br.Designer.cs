@@ -130,5 +130,41 @@ namespace Books.Domain.Shared.Resources {
                 return ResourceManager.GetString("UserNotFound", resourceCulture);
             }
         }
+        
+        public static string searchIsRequired {
+            get {
+                return ResourceManager.GetString("searchIsRequired", resourceCulture);
+            }
+        }
+        
+        public static string currentPageIsRequired {
+            get {
+                return ResourceManager.GetString("currentPageIsRequired", resourceCulture);
+            }
+        }
+        
+        public static string FavoriteBookNotFound {
+            get {
+                return ResourceManager.GetString("FavoriteBookNotFound", resourceCulture);
+            }
+        }
+        
+        public static string itemsPerPageIsRequired {
+            get {
+                return ResourceManager.GetString("itemsPerPageIsRequired", resourceCulture);
+            }
+        }
+        
+        public static string TheValueCannotBeGreaterThan {
+            get {
+                return ResourceManager.GetString("TheValueCannotBeGreaterThan", resourceCulture);
+            }
+        }
+        
+        public static string SearchMustBeAtLeastCharacters {
+            get {
+                return ResourceManager.GetString("SearchMustBeAtLeastCharacters", resourceCulture);
+            }
+        }
     }
 }
