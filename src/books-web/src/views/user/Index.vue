@@ -33,9 +33,9 @@
       <el-table-column prop="email" label="Email"> </el-table-column>
       <el-table-column prop="profileText" label="Perfil"> </el-table-column>
       <el-table-column fixed="right" label="" width="120">
-        <template slot-scope="scope">
+        <template slot-scope="props">
           <el-button
-            @click.native.prevent="remove(scope.$index)"
+            @click.native.prevent="remove(props.row.id)"
             type="text"
             size="small"
           >
@@ -86,7 +86,7 @@ export default {
       this.$refs["formPage"].handleOpen();
     },
     remove(id) {
-      debugger;
+      console.log(id);
       const loading = this.$loading({
         lock: true,
         text: "Loading",
