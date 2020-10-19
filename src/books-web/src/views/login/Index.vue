@@ -36,6 +36,7 @@
 
 <script>
 import * as service from "@/services/authenticate.service";
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -55,6 +56,10 @@ export default {
     };
   },
   methods: {
+    ...mapActions({
+        "setUser": "setUser",
+        "setToken": "setToken"
+    }),
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
@@ -63,13 +68,24 @@ export default {
       });
     },
     authenticate() {
-        debugger
+      const loading = this.$loading({
+        lock: true,
+        text: "Loading",
+        spinner: "el-icon-loading",
+        background: "rgba(0, 0, 0, 0.7)",
+      });
+
       service.authenticate(this.form).then(
         (result) => {
-            console.log(result)
+          console.log(result);
+          this.setUser(result.user);
+          this.setToken(result.token)
+          this.$router.push("home")
+          loading.close();
         },
         (err) => {
-            this.$swal({icon: 'error', text: err});
+          this.$swal({ icon: "error", text: err });
+          loading.close();
         }
       );
     },

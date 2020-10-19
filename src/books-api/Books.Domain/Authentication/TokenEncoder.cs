@@ -22,7 +22,7 @@ namespace Books.Domain.Authentication
         {
             var identity = new ClaimsIdentity(
               new[]{
-                    new Claim("UserId", user.Id.ToString()),
+                    new Claim("userId", user.Id.ToString()),
 
               });
 

@@ -24,14 +24,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInPackage>false</IncludeInPackage>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\DomainError.pt-Br.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DomainError.pt-Br.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Resource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\DomainError.pt-Br.resx">
+    <EmbeddedResource Update="Resources\Resource.pt-Br.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>DomainError.pt-Br.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resource.pt-Br.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
@@ -47,6 +52,12 @@
     </Compile>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Resources\DomainError.pt-Br.Designer.cs">
       <DependentUpon>DomainError.pt-Br.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Resource.Designer.cs">
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Resource.pt-Br.Designer.cs">
+      <DependentUpon>Resource.pt-Br.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

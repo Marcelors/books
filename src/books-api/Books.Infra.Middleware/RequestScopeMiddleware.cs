@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Books.Domain.Interfaces;
+using Books.Domain.Shared.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
@@ -37,7 +38,12 @@ namespace Books.Infra.Middleware
             }
 
 
-            var userId = httpContext.User.GetValue("UserId");
+            var userId = httpContext.User.GetValue("userId");
+            if (userId.HasValue())
+            {
+                requestScope.SetUserId(Guid.Parse(userId));
+            }
+            
 
             return _next(httpContext);
         }

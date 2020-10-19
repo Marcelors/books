@@ -1,13 +1,27 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/book">Livros</router-link> |
-      <router-link to="/favorite-book">Livros Favoritos</router-link>
-      <router-link to="/user">Usuários</router-link>
-    </div>
-    <router-view />
-  </div>
+  <el-tabs type="border-card">
+    <el-tab-pane label="Home">Bem Vindo {{ user.name }}</el-tab-pane>
+    <el-tab-pane label="Livros"><book-page></book-page></el-tab-pane>
+    <el-tab-pane label="Livros Favoritos">Livros Favoritos</el-tab-pane>
+    <el-tab-pane label="Usuários">Usuário</el-tab-pane>
+  </el-tabs>
 </template>
+
+<script>
+import { mapState } from "vuex";
+import BookPage from "./book/Index"
+
+export default {
+  components: {
+    BookPage
+  },
+  computed: {
+    ...mapState({
+      user: (state) => state.user,
+    }),
+  },
+};
+</script>
 
 <style>
 #app {
@@ -15,7 +29,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #73787c;
 }
 
 #nav {

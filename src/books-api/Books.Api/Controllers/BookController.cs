@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Books.ApplicationService.Application;
+using Books.ApplicationService.Inferfaces;
 using Books.Domain.Shared.Models;
 using Books.Domain.Shared.Nofication;
 using MediatR;
@@ -11,9 +12,9 @@ namespace Books.Api.Controllers
     [ApiController]
     public class BookController : ApiController
     {
-        private readonly BookApplicationService _bookApplicationService;
+        private readonly IBookApplicationService _bookApplicationService;
 
-        public BookController(IMediator bus, INotificationHandler<DomainNotification> notifications, BookApplicationService bookApplicationService) : base(bus, notifications)
+        public BookController(IMediator bus, INotificationHandler<DomainNotification> notifications, IBookApplicationService bookApplicationService) : base(bus, notifications)
         {
             _bookApplicationService = bookApplicationService;
         }

@@ -33,7 +33,7 @@ namespace Books.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+      
             services.AddDbContext<BookContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
@@ -46,6 +46,18 @@ namespace Books.Api
             var signingConfiguration = new SigningConfiguration();
             signingConfiguration.GenerateKey();
             services.AddSingleton<ISigningConfiguration>(signingConfiguration);
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("policy", builder =>
+                {
+                    builder.AllowAnyOrigin();
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
+                    builder.SetIsOriginAllowed(_ => true);
+                    builder.WithExposedHeaders("Content-Disposition");
+                });
+            });
 
             services.AddAuthentication(options =>
             {
@@ -77,17 +89,7 @@ namespace Books.Api
                     .RequireAuthenticatedUser().Build());
             });
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy("policy", builder =>
-                {
-                    builder.AllowAnyOrigin();
-                    builder.AllowAnyMethod();
-                    builder.AllowAnyHeader();
-                    builder.SetIsOriginAllowed(_ => true);                
-                    builder.WithExposedHeaders("Content-Disposition");
-                });
-            });
+
 
             services.AddControllers(options =>
             {
@@ -114,14 +116,16 @@ namespace Books.Api
             }
 
             app.UseCors("policy");
-
+       
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
 
             app.UseRouting()
                .UseLocalizationMiddleware()
                .UseRequestScopeMiddleware(); ;
 
-            app.UseAuthorization();
+          
 
             app.UseEndpoints(endpoints =>
             {

@@ -64,7 +64,7 @@ namespace Books.Domain.Services
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
 
-                    var query = $"volumes?q={filter.Search}&startIndex={filter.CurrentPage}&maxResults={filter.ItemsPerPage}";
+                    var query = $"volumes?q={filter.Search}&startIndex={filter.CurrentPage * filter.ItemsPerPage}&maxResults={filter.ItemsPerPage}";
 
                     HttpResponseMessage response = await client.GetAsync(query);
                     if (response.IsSuccessStatusCode)
