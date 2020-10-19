@@ -128,6 +128,17 @@ namespace Books.Test.Units
                 },
                 string.Format(DomainError.MaximumEmailSize, DomainParameters.MaxLenghtOfTwoHundred)
             };
+            yield return new object[]
+            {
+                new UserDto
+                {
+                    Name = "test",
+                    Email = "mail.com",
+                    Password = "test123",
+                    Profile = ProfileType.Administrator
+                },
+                DomainError.InvalidEmail
+            };
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

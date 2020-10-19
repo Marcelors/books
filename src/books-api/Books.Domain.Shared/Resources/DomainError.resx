@@ -127,4 +127,10 @@
     <data name="InvalidPassowrd" xml:space="preserve">
         <value>Invalid password</value>
     </data>
+    <data name="PasswordMustBeAtLeastCharacters" xml:space="preserve">
+        <value>the password must be at least {0} characters</value>
+    </data>
+    <data name="InvalidEmail" xml:space="preserve">
+        <value>Invalid email</value>
+    </data>
 </root>

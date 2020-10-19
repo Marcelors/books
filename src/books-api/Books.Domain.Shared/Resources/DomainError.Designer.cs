@@ -184,5 +184,17 @@ namespace Books.Domain.Shared.Resources {
                 return ResourceManager.GetString("InvalidPassowrd", resourceCulture);
             }
         }
+        
+        public static string PasswordMustBeAtLeastCharacters {
+            get {
+                return ResourceManager.GetString("PasswordMustBeAtLeastCharacters", resourceCulture);
+            }
+        }
+        
+        public static string InvalidEmail {
+            get {
+                return ResourceManager.GetString("InvalidEmail", resourceCulture);
+            }
+        }
     }
 }

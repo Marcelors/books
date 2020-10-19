@@ -30,7 +30,9 @@ namespace Books.Domain.Validation
                 .NotEmpty()
                 .WithMessage(DomainError.EmailIsRequired)
                 .MaximumLength(DomainParameters.MaxLenghtOfTwoHundred)
-                .WithMessage(string.Format(DomainError.MaximumEmailSize, DomainParameters.MaxLenghtOfTwoHundred));
+                .WithMessage(string.Format(DomainError.MaximumEmailSize, DomainParameters.MaxLenghtOfTwoHundred))
+                .EmailAddress()
+                .WithMessage(DomainError.InvalidEmail);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace Books.Test.Integration.ApplicationService
             {
                 Name = "test",
                 Email = "test@mail.com",
-                Password = "test"
+                Password = "test123"
             };
 
             _userApplicationService.Register(model);
@@ -49,9 +49,56 @@ namespace Books.Test.Integration.ApplicationService
         }
 
         [Fact]
+        public void UserApplicationService_Register_password_invalid()
+        {
+            var model = new UserModel
+            {
+                Name = "test",
+                Email = "test@mail.com",
+                Password = "test"
+            };
+
+            _userApplicationService.Register(model);
+
+            var result = _userRepository.Get(new Filter());
+
+            result.totalItems.Should().Be(0);
+            result.entities.Should().HaveCount(0);
+            DomainNotificationHandler.HasNotifications().Should().BeTrue();
+            DomainNotificationHandler.GetNotifications.First().Value.Should().Be(string.Format(DomainError.PasswordMustBeAtLeastCharacters, 6));
+        }
+
+        [Fact]
         public void UserApplicationService_Add_without_permission()
         {
             var currentUser = new UserBuilder().WithProfile(ProfileType.Standard).Builder();
+
+            _userRepository.Add(currentUser);
+            _unitOfWork.Commit();
+            _requestScope.SetUserId(currentUser.Id);
+
+            var model = new UserModel
+            {
+                Name = "test",
+                Email = "test@mail.com",
+                Password = "test123",
+                Profile = (short)ProfileType.Standard
+            };
+
+            _userApplicationService.Add(model);
+
+            var result = _userRepository.Get(new Filter());
+
+            result.totalItems.Should().Be(1);
+            result.entities.Should().HaveCount(1);
+            DomainNotificationHandler.HasNotifications().Should().BeTrue();
+            DomainNotificationHandler.GetNotifications.First().Value.Should().Be(DomainError.StandardProfileUserDoesNotHavePermission);
+        }
+
+        [Fact]
+        public void UserApplicationService_Add_password_invalid()
+        {
+            var currentUser = new UserBuilder().WithProfile(ProfileType.Administrator).Builder();
 
             _userRepository.Add(currentUser);
             _unitOfWork.Commit();
@@ -72,7 +119,7 @@ namespace Books.Test.Integration.ApplicationService
             result.totalItems.Should().Be(1);
             result.entities.Should().HaveCount(1);
             DomainNotificationHandler.HasNotifications().Should().BeTrue();
-            DomainNotificationHandler.GetNotifications.First().Value.Should().Be(DomainError.StandardProfileUserDoesNotHavePermission);
+            DomainNotificationHandler.GetNotifications.First().Value.Should().Be(string.Format(DomainError.PasswordMustBeAtLeastCharacters, 6));
         }
 
         [Fact]
@@ -88,7 +135,7 @@ namespace Books.Test.Integration.ApplicationService
             {
                 Name = "test",
                 Email = "test@mail.com",
-                Password = "test",
+                Password = "test123",
                 Profile = (short)ProfileType.Standard
             };
 

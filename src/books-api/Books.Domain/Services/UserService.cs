@@ -43,6 +43,11 @@ namespace Books.Domain.Services
                 return;
             }
 
+            if (!ValidadePassword(dto))
+            {
+                return;
+            }
+
             var user = new User(dto.Name, dto.Password.Encrypt(), dto.Email, dto.Profile.Value);
             _userRepository.Add(user);
             Commit();
@@ -116,6 +121,11 @@ namespace Books.Domain.Services
                 return;
             }
 
+            if (!ValidadePassword(dto))
+            {
+                return;
+            }
+
             var user = new User(dto.Name, dto.Password.Encrypt(), dto.Email, dto.Profile.Value);
             _userRepository.Add(user);
             Commit();
@@ -151,6 +161,18 @@ namespace Books.Domain.Services
 
             _userRepository.Update(user);
             Commit();
+        }
+
+        private bool ValidadePassword(UserDto dto)
+        {
+            if(dto.Password.Length < 6)
+            {
+                NotifyError(string.Format(DomainError.PasswordMustBeAtLeastCharacters, 6));
+                return false;
+            }
+
+
+            return true;
         }
     }
 }
