@@ -9,20 +9,28 @@ export default new Vuex.Store({
     user: null
   },
   mutations: {
-    SET_USER(state, user){
+    SET_USER(state, user) {
       state.user = user
     },
-    SET_TOKEN(state, token){
+    SET_TOKEN(state, token) {
       state.token = token
+    },
+    CLEAN(state) {
+      state.user = null;
+      state.token = null
     }
   },
   actions: {
-    setUser({commit}, user){
+    setUser({ commit }, user) {
       commit("SET_USER", user)
     },
-    setToken({commit}, token) {
+    setToken({ commit }, token) {
       commit("SET_TOKEN", token)
       localStorage.setItem("token", token);
+    },
+    clean({ commit }) {
+      commit("CLEAN")
+      localStorage.setItem("token", null)
     }
   },
   modules: {
