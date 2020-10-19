@@ -121,4 +121,10 @@
     <data name="StandardProfileUserDoesNotHavePermission" xml:space="preserve">
         <value>Usuário do perfil standard não tem permissão</value>
     </data>
+    <data name="PasswordIsRequired" xml:space="preserve">
+        <value>Senha é obrigatória</value>
+    </data>
+    <data name="InvalidPassowrd" xml:space="preserve">
+        <value>Senha inválida</value>
+    </data>
 </root>

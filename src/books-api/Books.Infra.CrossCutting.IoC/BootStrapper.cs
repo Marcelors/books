@@ -21,16 +21,19 @@ namespace Books.Infra.CrossCutting.IoC
         public static void Register(this IServiceCollection services)
         {
             services.AddSingleton<IConfigurationProvider>(AutoMapperConfig.RegisterMappings());
+            services.AddSingleton<ITokenEncoder, TokenEncoder>();
 
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
 
             services.AddScoped<IUserApplicationService, UserApplicationService>();
             services.AddScoped<IBookApplicationService, BookApplicationService>();
             services.AddScoped<IFavoriteBookApplicationService, FavoriteBookApplicationService>();
+            services.AddScoped<IAuthenticateApplicationService, AuthenticateApplicationService>();
 
             services.AddScoped<IFavoriteBookService, FavoriteBookService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IAuthenticateService, AuthenticateService>();
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IFavoriteBookRepository, FavoriteBookRepository>();

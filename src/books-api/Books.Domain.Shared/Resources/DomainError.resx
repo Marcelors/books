@@ -121,4 +121,10 @@
     <data name="StandardProfileUserDoesNotHavePermission" xml:space="preserve">
         <value>Standard profile user does not have permission</value>
     </data>
+    <data name="PasswordIsRequired" xml:space="preserve">
+        <value>Password is required</value>
+    </data>
+    <data name="InvalidPassowrd" xml:space="preserve">
+        <value>Invalid password</value>
+    </data>
 </root>

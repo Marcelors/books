@@ -1,10 +1,18 @@
-﻿using System;
+﻿using Books.Domain.Shared.Models;
+using Books.Domain.Validation;
+
 namespace Books.Domain.DTO
 {
-    public class AuthenticateDto
+    public class AuthenticateDto : BaseDto
     {
-        public AuthenticateDto()
+        public string Email { get; set; }
+        public string Password { get; set; }
+
+        public bool IsValid()
         {
+            var validation = new AuthenticateValidation();
+            ValidationResult = validation.Validate(this);
+            return ValidationResult.IsValid;
         }
     }
 }

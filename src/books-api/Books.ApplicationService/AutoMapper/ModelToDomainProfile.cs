@@ -13,6 +13,7 @@ namespace Books.ApplicationService.AutoMapper
                 .ForMember(x => x.Profile, m => m.MapFrom(a => a.Profile.HasValue ? (ProfileType)a.Profile.Value : (ProfileType?)null));
 
             CreateMap<FavoriteBookModel, FavoriteBookDto>();
+            CreateMap<AuthenticateModel, AuthenticateDto>();
         }
     }
 }

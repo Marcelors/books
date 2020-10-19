@@ -40,5 +40,12 @@ namespace Books.Infra.Data.Repositories
 
             return (totalItems: totalItems, entities: entities);
         }
+
+        public User GetByEmail(string email)
+        {
+            var query = GetAll();
+
+            return query.FirstOrDefault(x => x.Email == email);
+        }
     }
 }

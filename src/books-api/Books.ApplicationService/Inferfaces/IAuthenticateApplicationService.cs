@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Books.ApplicationService.Model;
+
 namespace Books.ApplicationService.Inferfaces
 {
-    public class IAuthenticateApplicationService
+    public interface IAuthenticateApplicationService
     {
-        public IAuthenticateApplicationService()
-        {
-        }
+        UserResultModel Authenticate(AuthenticateModel model);
     }
 }

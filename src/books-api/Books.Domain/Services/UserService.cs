@@ -5,6 +5,7 @@ using Books.Domain.Interfaces;
 using Books.Domain.Interfaces.Repositores;
 using Books.Domain.Interfaces.Services;
 using Books.Domain.Shared.Enums;
+using Books.Domain.Shared.Extensions;
 using Books.Domain.Shared.Nofication;
 using Books.Domain.Shared.Resources;
 using MediatR;
@@ -42,7 +43,7 @@ namespace Books.Domain.Services
                 return;
             }
 
-            var user = new User(dto.Name, dto.Password, dto.Email, dto.Profile.Value);
+            var user = new User(dto.Name, dto.Password.Encrypt(), dto.Email, dto.Profile.Value);
             _userRepository.Add(user);
             Commit();
         }
@@ -115,7 +116,7 @@ namespace Books.Domain.Services
                 return;
             }
 
-            var user = new User(dto.Name, dto.Password, dto.Email, dto.Profile.Value);
+            var user = new User(dto.Name, dto.Password.Encrypt(), dto.Email, dto.Profile.Value);
             _userRepository.Add(user);
             Commit();
         }

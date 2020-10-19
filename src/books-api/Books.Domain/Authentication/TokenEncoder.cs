@@ -44,4 +44,3 @@ namespace Books.Domain.Authentication
         }
     }
 }
-}

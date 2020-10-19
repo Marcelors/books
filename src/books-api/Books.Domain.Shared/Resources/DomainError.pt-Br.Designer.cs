@@ -172,5 +172,17 @@ namespace Books.Domain.Shared.Resources {
                 return ResourceManager.GetString("StandardProfileUserDoesNotHavePermission", resourceCulture);
             }
         }
+        
+        public static string PasswordIsRequired {
+            get {
+                return ResourceManager.GetString("PasswordIsRequired", resourceCulture);
+            }
+        }
+        
+        public static string InvalidPassowrd {
+            get {
+                return ResourceManager.GetString("InvalidPassowrd", resourceCulture);
+            }
+        }
     }
 }
