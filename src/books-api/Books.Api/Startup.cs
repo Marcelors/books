@@ -14,6 +14,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MediatR;
 using Books.Infra.CrossCutting.IoC;
+using AutoMapper;
+using Books.ApplicationService.AutoMapper;
 
 namespace Books.Api
 {
@@ -30,12 +32,16 @@ namespace Books.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.Register();
-
             services.AddDbContext<BookContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
+            services.AddAutoMapper(typeof(AutoMapperConfig));
+            AutoMapperConfig.RegisterMappings();
+            services.Register();
+
+
+         
 
             services.AddCors(options =>
             {
