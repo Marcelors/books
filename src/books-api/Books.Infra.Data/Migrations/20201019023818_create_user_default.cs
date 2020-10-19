@@ -6,6 +6,7 @@ namespace Books.Infra.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            //admin123
             migrationBuilder.Sql("INSERT INTO [USER](ID, NAME, EMAIL, PASSWORD, PROFILE, ACTIVE) values (NEWID(), 'Admin', 'admin@mail.com', '0192023a7bbd73250516f069df18b500', 1, 1)");
         }
 
