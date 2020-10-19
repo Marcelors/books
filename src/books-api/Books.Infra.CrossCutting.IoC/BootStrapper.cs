@@ -2,6 +2,7 @@
 using Books.ApplicationService.Application;
 using Books.ApplicationService.AutoMapper;
 using Books.ApplicationService.Inferfaces;
+using Books.Domain.Authentication;
 using Books.Domain.Interfaces;
 using Books.Domain.Interfaces.Repositores;
 using Books.Domain.Interfaces.Services;
@@ -35,9 +36,8 @@ namespace Books.Infra.CrossCutting.IoC
             services.AddScoped<IFavoriteBookRepository, FavoriteBookRepository>();
 
             services.AddScoped<BookContext>();
-            services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IRequestScope, IRequestScope>();
+            services.AddScoped<IRequestScope, RequestScope>();
         }
     }
 }

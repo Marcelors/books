@@ -16,9 +16,9 @@ namespace Books.Domain.Services
 {
     public class BookService : Service, IBookService
     {
-        private const string resource = "www.googleapis.com/books/v1/volumes";
+        private const string resource = "https://www.googleapis.com/books/v1/";
 
-        protected BookService(IUnitOfWork uow, IMediator bus, INotificationHandler<DomainNotification> notifications) : base(uow, bus, notifications)
+        public BookService(IUnitOfWork uow, IMediator bus, INotificationHandler<DomainNotification> notifications) : base(uow, bus, notifications)
         {
         }
 
@@ -64,10 +64,10 @@ namespace Books.Domain.Services
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
 
-                    var query = $"?q={filter.Search}&startIndex={filter.CurrentPage}&maxResults={filter.ItemsPerPage}";
+                    var query = $"volumes?q={filter.Search}&startIndex={filter.CurrentPage}&maxResults={filter.ItemsPerPage}";
 
                     HttpResponseMessage response = await client.GetAsync(query);
-                    if (!response.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
                         if (string.IsNullOrWhiteSpace(content))
@@ -101,8 +101,8 @@ namespace Books.Domain.Services
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
 
-                    HttpResponseMessage response = await client.GetAsync($"/{id}");
-                    if (!response.IsSuccessStatusCode)
+                    HttpResponseMessage response = await client.GetAsync($"volumes/{id}");
+                    if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
                         if (string.IsNullOrWhiteSpace(content))

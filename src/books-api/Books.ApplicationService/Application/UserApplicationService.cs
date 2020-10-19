@@ -68,7 +68,7 @@ namespace Books.ApplicationService.Application
         {
             var dto = _mapper.Map<UserDto>(model);
             dto.Profile = ProfileType.Standard;
-            _userService.Add(dto);
+            _userService.Register(dto);
         }
 
         public void Update(Guid id, UserModel model)

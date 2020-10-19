@@ -166,5 +166,11 @@ namespace Books.Domain.Shared.Resources {
                 return ResourceManager.GetString("SearchMustBeAtLeastCharacters", resourceCulture);
             }
         }
+        
+        public static string StandardProfileUserDoesNotHavePermission {
+            get {
+                return ResourceManager.GetString("StandardProfileUserDoesNotHavePermission", resourceCulture);
+            }
+        }
     }
 }

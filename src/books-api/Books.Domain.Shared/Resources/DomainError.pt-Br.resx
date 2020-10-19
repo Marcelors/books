@@ -118,4 +118,7 @@
     <data name="SearchMustBeAtLeastCharacters" xml:space="preserve">
         <value>a pesquisa deve ter pelo menos {0} caracteres</value>
     </data>
+    <data name="StandardProfileUserDoesNotHavePermission" xml:space="preserve">
+        <value>Usuário do perfil standard não tem permissão</value>
+    </data>
 </root>
