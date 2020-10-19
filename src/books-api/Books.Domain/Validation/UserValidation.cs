@@ -15,6 +15,7 @@ namespace Books.Domain.Validation
                 .WithMessage(DomainError.ProfileIsRequired);
 
             RuleFor(x => x.Name)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .WithMessage(DomainError.NameIsRequired)
                 .NotEmpty()
@@ -22,7 +23,8 @@ namespace Books.Domain.Validation
                 .MaximumLength(DomainParameters.MaxLenghtOfTwoHundred)
                 .WithMessage(string.Format(DomainError.MaximumNameSize, DomainParameters.MaxLenghtOfTwoHundred));
 
-            RuleFor(x => x.Name)
+            RuleFor(x => x.Email)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .WithMessage(DomainError.EmailIsRequired)
                 .NotEmpty()

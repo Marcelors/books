@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import * as service from "@/services/authenticate.service";
+
 export default {
   data() {
     return {
@@ -56,12 +58,20 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert("submit!");
-        } else {
-          console.log("error submit!!");
-          return false;
+          this.authenticate();
         }
       });
+    },
+    authenticate() {
+        debugger
+      service.authenticate(this.form).then(
+        (result) => {
+            console.log(result)
+        },
+        (err) => {
+            this.$swal({icon: 'error', text: err});
+        }
+      );
     },
   },
 };

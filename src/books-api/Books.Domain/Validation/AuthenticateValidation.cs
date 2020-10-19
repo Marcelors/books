@@ -10,12 +10,14 @@ namespace Books.Domain.Validation
         public AuthenticateValidation()
         {
             RuleFor(x => x.Email)
+               .Cascade(CascadeMode.StopOnFirstFailure)
                .NotNull()
                .WithMessage(DomainError.EmailIsRequired)
                .NotEmpty()
                .WithMessage(DomainError.EmailIsRequired);
 
             RuleFor(x => x.Password)
+               .Cascade(CascadeMode.StopOnFirstFailure)
                .NotNull()
                .WithMessage(DomainError.PasswordIsRequired)
                .NotEmpty()

@@ -11,12 +11,14 @@ namespace Books.Domain.Validation
         public FavoriteBookValidation()
         {
             RuleFor(x => x.Authors)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                .NotNull()
                .WithMessage(DomainError.AuthorsIsRequired)
                .NotEmpty()
                .WithMessage(DomainError.AuthorsIsRequired);
 
             RuleFor(x => x.BookId)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                .NotNull()
                .WithMessage(DomainError.BookIdIsRequired)
                .NotEmpty()
@@ -25,6 +27,7 @@ namespace Books.Domain.Validation
                .WithMessage(string.Format(DomainError.MaximumBookIdSize, DomainParameters.MaxLenghtOfFifty));
 
             RuleFor(x => x.Link)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                .NotNull()
                .WithMessage(DomainError.LinkIsRequired)
                .NotEmpty()
@@ -33,6 +36,7 @@ namespace Books.Domain.Validation
                .WithMessage(string.Format(DomainError.MaximumLinkSize, DomainParameters.MaxLenghtOfOneThousand));
 
             RuleFor(x => x.Title)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                .NotNull()
                .WithMessage(DomainError.TitleIsRequired)
                .NotEmpty()
