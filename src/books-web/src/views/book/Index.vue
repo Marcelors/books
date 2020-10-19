@@ -116,6 +116,7 @@ export default {
             text: "Livro adicionado aos favoritos",
           });
           loading.close();
+          this.$emit("addFavorite")
         },
         (err) => {
           this.$swal({ icon: "error", text: err });
