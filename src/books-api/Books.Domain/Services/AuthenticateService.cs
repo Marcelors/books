@@ -40,7 +40,7 @@ namespace Books.Domain.Services
 
             if(user.Password != dto.Password.Encrypt())
             {
-                NotifyError(DomainError.InvalidPassowrd);
+                NotifyError(DomainError.InvalidPassoword);
                      return (string.Empty, null);
             }
 

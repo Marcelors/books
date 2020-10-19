@@ -1,5 +1,7 @@
 ﻿using System;
 using AutoMapper;
+using Books.Domain.Authentication;
+using Books.Domain.Interfaces;
 using Books.Domain.Shared.Nofication;
 using Books.Infra.CrossCutting.IoC;
 using Books.Infra.Data.Context;
@@ -23,6 +25,19 @@ namespace Books.Test.Integration
         {
             OpenConnection();
             Service = new ServiceCollection();
+
+            var tokenConfiguration = new TokenConfiguration
+            {
+                Audience = "test",
+                Hours = 1,
+                Issuer = "test"
+            };
+            
+            Service.AddSingleton<ITokenConfiguration>(tokenConfiguration);
+
+            var signingConfiguration = new SigningConfiguration();
+            signingConfiguration.GenerateKey();
+            Service.AddSingleton<ISigningConfiguration>(signingConfiguration);
 
             Service.AddAutoMapper(typeof(TestIntegrationBase));
             Service.Register();

@@ -16,7 +16,7 @@ namespace Books.Test.Builder
         public User Builder()
         {
             var user = new User(name: _name.HasValue() ? _name : "test",
-                password: _password.HasValue() ? _password : "test",
+                password: _password.HasValue() ? _password.Encrypt() : "test".Encrypt(),
                 email: _email.HasValue() ? _email : "test@com.br",
                 profile: _profile.HasValue ? _profile.Value : ProfileType.Administrator);
 

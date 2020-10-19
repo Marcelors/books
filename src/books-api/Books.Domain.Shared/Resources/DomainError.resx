@@ -124,7 +124,7 @@
     <data name="PasswordIsRequired" xml:space="preserve">
         <value>Password is required</value>
     </data>
-    <data name="InvalidPassowrd" xml:space="preserve">
+    <data name="InvalidPassoword" xml:space="preserve">
         <value>Invalid password</value>
     </data>
     <data name="PasswordMustBeAtLeastCharacters" xml:space="preserve">

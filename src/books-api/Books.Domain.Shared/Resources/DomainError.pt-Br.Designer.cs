@@ -179,9 +179,9 @@ namespace Books.Domain.Shared.Resources {
             }
         }
         
-        public static string InvalidPassowrd {
+        public static string InvalidPassoword {
             get {
-                return ResourceManager.GetString("InvalidPassowrd", resourceCulture);
+                return ResourceManager.GetString("InvalidPassoword", resourceCulture);
             }
         }
         
